@@ -7,6 +7,7 @@ import Skills from '@/components/Skills';
 import About from '@/components/About';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import BackToTop from '@/components/BackToTop';
 
 const Index = () => {
   // Smooth scroll to the section when loading with a hash
@@ -36,6 +37,7 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 };
