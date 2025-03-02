@@ -18,18 +18,16 @@ const Hero = () => {
       
       <div className="container-section flex flex-col items-center justify-center text-center relative z-10">
         <TransitionEffect delay={100}>
-          <div className="inline-block mb-6 px-3 py-1 rounded-full text-sm font-medium tracking-wider bg-sky-300">FULL STACK AI DEVELOPER</div>
+          <div className="inline-block mb-6 px-3 py-1 rounded-full text-sm font-medium tracking-wider bg-red-300">FULL STACK AI DEVELOPER</div>
         </TransitionEffect>
         
         <TransitionEffect delay={300}>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 max-w-3xl">Creating elegant digital experiences with lovable.dev</h1>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 max-w-3xl">Creating elegant digital experiences
+        </h1>
         </TransitionEffect>
         
         <TransitionEffect delay={500}>
-          <p className="text-xl text-muted-foreground max-w-xl mb-10">
-            I build modern web applications with a focus on clean code, 
-            intuitive interfaces, and exceptional user experiences.
-          </p>
+          <p className="text-xl text-muted-foreground max-w-xl mb-10">I build modern web applications with Lovable.dev</p>
         </TransitionEffect>
         
         <TransitionEffect delay={700}>
