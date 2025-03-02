@@ -1,3 +1,4 @@
+
 import React from 'react';
 import TransitionEffect from './TransitionEffect';
 
@@ -13,8 +14,11 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-12 pb-12 relative">
-      <div className="container-section flex flex-col items-center justify-center text-center">
+    <section id="home" className="min-h-screen flex items-center pt-12 pb-12 relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')" }}>
+      {/* Overlay to ensure text readability */}
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+      
+      <div className="container-section flex flex-col items-center justify-center text-center relative z-10">
         <TransitionEffect delay={100}>
           <div className="inline-block mb-6 px-3 py-1 bg-secondary rounded-full text-sm font-medium tracking-wider">
             FULL STACK DEVELOPER
