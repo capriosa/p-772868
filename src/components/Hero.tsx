@@ -1,4 +1,3 @@
-
 import React from 'react';
 import TransitionEffect from './TransitionEffect';
 
@@ -14,7 +13,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-16 pb-16 relative">
+    <section id="home" className="min-h-screen flex items-center pt-12 pb-12 relative">
       <div className="container-section flex flex-col items-center justify-center text-center">
         <TransitionEffect delay={100}>
           <div className="inline-block mb-6 px-3 py-1 bg-secondary rounded-full text-sm font-medium tracking-wider">

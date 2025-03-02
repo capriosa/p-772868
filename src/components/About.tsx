@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from 'react';
 import TransitionEffect from './TransitionEffect';
 
@@ -33,7 +32,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="py-20 md:py-32">
+    <section id="about" ref={sectionRef} className="py-16 md:py-24">
       <div className="container-section">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <TransitionEffect 

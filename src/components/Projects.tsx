@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from 'react';
 import ProjectCard, { ProjectData } from './ProjectCard';
 import TransitionEffect from './TransitionEffect';
@@ -61,7 +60,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="projects" ref={sectionRef} className="py-20 md:py-32">
+    <section id="projects" ref={sectionRef} className="py-16 md:py-24">
       <div className="container-section">
         <TransitionEffect className={isVisible ? 'animate-slide-in' : ''}>
           <div className="text-center mb-16">

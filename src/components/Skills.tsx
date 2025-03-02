@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from 'react';
 import SkillCard, { SkillData } from './SkillCard';
 import TransitionEffect from './TransitionEffect';
@@ -98,7 +97,7 @@ const Skills = () => {
     : skillsData.filter(skill => skill.category === activeFilter);
 
   return (
-    <section id="skills" ref={sectionRef} className="py-20 md:py-32 bg-secondary/50">
+    <section id="skills" ref={sectionRef} className="py-16 md:py-24 bg-secondary/50">
       <div className="container-section">
         <TransitionEffect className={isVisible ? 'animate-slide-in' : ''}>
           <div className="text-center mb-16">
