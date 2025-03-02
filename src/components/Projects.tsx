@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from 'react';
 import ProjectCard, { ProjectData } from './ProjectCard';
 import TransitionEffect from './TransitionEffect';
@@ -74,12 +75,12 @@ const Projects = () => {
           </div>
         </TransitionEffect>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 h-full">
           {projectsData.map((project, index) => (
             <TransitionEffect 
               key={index} 
               delay={index * 100}
-              className={isVisible ? 'animate-slide-in' : ''}
+              className={`${isVisible ? 'animate-slide-in' : ''} h-full`}
             >
               <ProjectCard project={project} index={index} />
             </TransitionEffect>

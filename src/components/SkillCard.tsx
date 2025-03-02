@@ -24,7 +24,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
   const colorClass = categoryColors[skill.category] || categoryColors.other;
   
   return (
-    <div className="flex flex-col items-center p-5 rounded-lg bg-white dark:bg-secondary border border-border transition-all duration-300 hover:shadow-subtle">
+    <div className="flex flex-col items-center p-5 rounded-lg bg-white dark:bg-secondary border border-border transition-all duration-300 hover:shadow-subtle h-full">
       <div className={cn("w-16 h-16 flex items-center justify-center rounded-full mb-4", colorClass)}>
         <img src={skill.icon} alt={skill.name} className="w-8 h-8" />
       </div>
@@ -38,7 +38,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
         />
       </div>
       
-      <p className="text-xs text-muted-foreground">
+      <p className="text-xs text-muted-foreground mt-auto">
         {skill.level < 30 && 'Beginner'}
         {skill.level >= 30 && skill.level < 70 && 'Intermediate'}
         {skill.level >= 70 && 'Advanced'}

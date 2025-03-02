@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from 'react';
 import SkillCard, { SkillData } from './SkillCard';
 import TransitionEffect from './TransitionEffect';
@@ -130,12 +131,12 @@ const Skills = () => {
           </div>
         </TransitionEffect>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 h-full">
           {filteredSkills.map((skill, index) => (
             <TransitionEffect 
               key={index} 
               delay={index * 100}
-              className={isVisible ? 'animate-slide-in' : ''}
+              className={`${isVisible ? 'animate-slide-in' : ''} h-full`}
             >
               <SkillCard skill={skill} />
             </TransitionEffect>

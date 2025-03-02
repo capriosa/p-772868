@@ -22,7 +22,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   
   return (
     <div 
-      className="relative rounded-lg overflow-hidden card-hover shadow-subtle"
+      className="relative rounded-lg overflow-hidden card-hover shadow-subtle h-full flex flex-col"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -36,7 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         />
       </div>
       
-      <div className="p-6">
+      <div className="p-6 flex-1 flex flex-col">
         <div className="flex gap-2 mb-3 flex-wrap">
           {project.tags.map((tag, i) => (
             <span key={i} className="tag">
@@ -46,9 +46,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         </div>
         
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-muted-foreground mb-4">{project.description}</p>
+        <p className="text-muted-foreground mb-4 flex-1">{project.description}</p>
         
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-3 mt-auto">
           <a 
             href={project.demoUrl}
             target="_blank"
