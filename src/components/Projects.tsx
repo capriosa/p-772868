@@ -2,8 +2,10 @@
 import React, { useRef, useEffect, useState } from 'react';
 import ProjectCard, { ProjectData } from './ProjectCard';
 import TransitionEffect from './TransitionEffect';
+import { toast } from "sonner";
 
-const projectsData: ProjectData[] = [
+// Initial projects data
+const initialProjectsData: ProjectData[] = [
   {
     title: 'E-Commerce Platform',
     description: 'A full-featured online store with payment processing and inventory management.',
@@ -33,6 +35,16 @@ const projectsData: ProjectData[] = [
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [projectsData, setProjectsData] = useState<ProjectData[]>(() => {
+    // Try to load from localStorage, otherwise use initial data
+    const savedProjects = localStorage.getItem('projectsData');
+    return savedProjects ? JSON.parse(savedProjects) : initialProjectsData;
+  });
+
+  // Save to localStorage whenever projectsData changes
+  useEffect(() => {
+    localStorage.setItem('projectsData', JSON.stringify(projectsData));
+  }, [projectsData]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -60,6 +72,28 @@ const Projects = () => {
     };
   }, []);
 
+  const handleProjectUpdate = (index: number, updatedProject: ProjectData) => {
+    setProjectsData(prev => {
+      const newData = [...prev];
+      newData[index] = updatedProject;
+      return newData;
+    });
+    
+    toast("Project updated successfully", {
+      description: `${updatedProject.title} has been updated.`,
+      position: "bottom-right",
+    });
+  };
+
+  const resetProjectsData = () => {
+    if (confirm("Are you sure you want to reset all projects to their default state?")) {
+      setProjectsData(initialProjectsData);
+      toast("Projects reset to default", {
+        position: "bottom-right",
+      });
+    }
+  };
+
   return (
     <section id="projects" ref={sectionRef} className="py-16 md:py-24">
       <div className="container-section">
@@ -72,6 +106,12 @@ const Projects = () => {
             <p className="section-subheading mx-auto">
               A selection of my recent development work
             </p>
+            <button 
+              onClick={resetProjectsData}
+              className="mt-4 text-xs text-muted-foreground underline hover:text-primary transition-colors"
+            >
+              Reset to defaults
+            </button>
           </div>
         </TransitionEffect>
 
@@ -82,7 +122,11 @@ const Projects = () => {
               delay={index * 100}
               className={`${isVisible ? 'animate-slide-in' : ''} h-full`}
             >
-              <ProjectCard project={project} index={index} />
+              <ProjectCard 
+                project={project} 
+                index={index} 
+                onUpdate={handleProjectUpdate}
+              />
             </TransitionEffect>
           ))}
         </div>
