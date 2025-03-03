@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github, Edit, Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import ImageUploader from './ImageUploader';
+import { toast } from "sonner";
 
 export interface ProjectData {
   title: string;
@@ -50,32 +52,32 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onUpdate }) =
     }));
   };
   
+  const handleImageChange = (imageBase64: string) => {
+    setEditedProject(prev => ({
+      ...prev,
+      image: imageBase64
+    }));
+    
+    if (imageBase64) {
+      toast("Image updated", {
+        description: "Your image has been updated successfully",
+        position: "bottom-right",
+      });
+    }
+  };
+  
   return (
     <div 
       className="relative rounded-lg overflow-hidden card-hover shadow-subtle h-full flex flex-col"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="aspect-video w-full overflow-hidden">
+      <div className="aspect-video w-full overflow-hidden relative">
         {isEditing ? (
-          <div className="w-full h-full p-4 bg-muted flex items-center">
-            <div className="w-full">
-              <label className="text-xs text-muted-foreground mb-1 block">Image URL</label>
-              <input
-                type="url"
-                name="image"
-                value={editedProject.image}
-                onChange={handleInputChange}
-                className="w-full p-2 rounded border bg-background text-sm"
-                placeholder="https://example.com/image.jpg"
-              />
-              <div className="mt-2 text-xs text-muted-foreground">
-                {editedProject.image && (
-                  <span className="text-green-500">✓ Image URL provided</span>
-                )}
-              </div>
-            </div>
-          </div>
+          <ImageUploader 
+            currentImage={editedProject.image} 
+            onImageChange={handleImageChange} 
+          />
         ) : (
           <div 
             className="w-full h-full bg-cover bg-center transition-transform duration-700 ease-in-out-expo"
