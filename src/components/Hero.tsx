@@ -18,7 +18,7 @@ const Hero = () => {
       
       <div className="container-section flex flex-col items-center justify-center text-center relative z-10">
         <TransitionEffect delay={100}>
-          <div className="inline-block mb-6 px-3 py-1 rounded-full text-sm font-medium tracking-wider bg-red-300">FULL STACK AI DEVELOPER</div>
+          <div className="inline-block mb-6 px-3 py-1 rounded-full text-sm font-medium tracking-wider bg-slate-400">FULL STACK AI DEVELOPER</div>
         </TransitionEffect>
         
         <TransitionEffect delay={300}>
