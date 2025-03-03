@@ -30,6 +30,30 @@ const initialProjectsData: ProjectData[] = [
     demoUrl: '#',
     githubUrl: '#'
   },
+  {
+    title: 'Portfolio Website',
+    description: 'A modern, responsive portfolio website to showcase creative work and projects.',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29tcHV0ZXIlMjBwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    tags: ['React', 'Three.js', 'Framer Motion', 'GSAP'],
+    demoUrl: '#',
+    githubUrl: '#'
+  },
+  {
+    title: 'Mobile Fitness App',
+    description: 'A comprehensive fitness tracking application with workout plans and nutrition guidance.',
+    image: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29tcHV0ZXIlMjBwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    tags: ['React Native', 'Redux', 'Firebase', 'Health API'],
+    demoUrl: '#',
+    githubUrl: '#'
+  },
+  {
+    title: 'AI Content Generator',
+    description: 'A tool that leverages AI to generate blog posts, social media content, and marketing copy.',
+    image: 'https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YWklMjB0ZWNofGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60',
+    tags: ['OpenAI API', 'Python', 'Flask', 'React'],
+    demoUrl: '#',
+    githubUrl: '#'
+  },
 ];
 
 const Projects = () => {
