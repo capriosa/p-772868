@@ -54,6 +54,31 @@ const initialProjectsData: ProjectData[] = [
     demoUrl: '#',
     githubUrl: '#'
   },
+  // Adding 3 more projects to create 3 rows
+  {
+    title: 'Social Media Platform',
+    description: 'A feature-rich social networking platform with real-time messaging and content sharing.',
+    image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c29jaWFsJTIwbWVkaWF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60',
+    tags: ['React', 'Socket.io', 'Express', 'MongoDB'],
+    demoUrl: '#',
+    githubUrl: '#'
+  },
+  {
+    title: 'Blockchain Explorer',
+    description: 'A tool for visualizing and exploring blockchain transactions and smart contracts.',
+    image: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmxvY2tjaGFpbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    tags: ['Ethereum', 'Web3.js', 'React', 'D3.js'],
+    demoUrl: '#',
+    githubUrl: '#'
+  },
+  {
+    title: 'Online Learning Platform',
+    description: 'An interactive e-learning platform with courses, quizzes, and progress tracking.',
+    image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGVhcm5pbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'AWS'],
+    demoUrl: '#',
+    githubUrl: '#'
+  },
 ];
 
 const Projects = () => {
