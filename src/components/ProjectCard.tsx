@@ -57,13 +57,34 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onUpdate }) =
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="aspect-video w-full overflow-hidden">
-        <div 
-          className="w-full h-full bg-cover bg-center transition-transform duration-700 ease-in-out-expo"
-          style={{ 
-            backgroundImage: `url(${project.image})`,
-            transform: isHovered ? 'scale(1.05)' : 'scale(1)'
-          }}
-        />
+        {isEditing ? (
+          <div className="w-full h-full p-4 bg-muted flex items-center">
+            <div className="w-full">
+              <label className="text-xs text-muted-foreground mb-1 block">Image URL</label>
+              <input
+                type="url"
+                name="image"
+                value={editedProject.image}
+                onChange={handleInputChange}
+                className="w-full p-2 rounded border bg-background text-sm"
+                placeholder="https://example.com/image.jpg"
+              />
+              <div className="mt-2 text-xs text-muted-foreground">
+                {editedProject.image && (
+                  <span className="text-green-500">✓ Image URL provided</span>
+                )}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div 
+            className="w-full h-full bg-cover bg-center transition-transform duration-700 ease-in-out-expo"
+            style={{ 
+              backgroundImage: `url(${project.image})`,
+              transform: isHovered ? 'scale(1.05)' : 'scale(1)'
+            }}
+          />
+        )}
       </div>
       
       <div className="p-6 flex-1 flex flex-col">
